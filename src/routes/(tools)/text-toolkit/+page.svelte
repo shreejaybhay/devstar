@@ -112,9 +112,8 @@
         <button on:click={removeWhitespace} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Remove Whitespace</button>
       </div>
       <div>
-        <button on:click={copyText} class="copy-button bg-gray-600 text-white px-4 py-3 rounded hover:bg-gray-500 duration-300">
-          <!-- svelte-ignore a11y-missing-attribute -->
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALBJREFUSEvtldENgzAMRO82gU3aUZikozAKjMImVwUpqKGkNo74qchv7LzEOZ+JixcvPh8mQNIDwAigc15mATCQnFO8BzABSJAzayHZewFaA0nzMilOUhFvJu0TrGf8MaBVLbl01RJJalKLB9CklhvwJf9af/z65NAfVBpvJvksrCLasQeAY7OLAiyP2rzoBtRc9rNEEavY1OIBpKn1OjG9CrWYAGuQRPfNiRY9OOe9ARWQrBm2wE6mAAAAAElFTkSuQmCC"/>
+        <button on:click={copyText} class="copy-button bg-gray-600 text-white p-2 rounded hover:bg-gray-500 duration-300 w-auto h-auto">
+          <img width="60px"src="https://i.postimg.cc/x12588Zb/copy-regular-24.png" alt="">
         </button>
       </div>
     </div>
