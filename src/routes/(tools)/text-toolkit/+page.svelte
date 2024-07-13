@@ -125,6 +125,7 @@
 				<button on:click={sortWord} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Sort Word</button>
 
 
+				
 			</div>
 			<div>
 				<button on:click={copyText} class="copy-button bg-gray-600 text-white px-4 py-3 rounded hover:bg-gray-500 duration-300">
