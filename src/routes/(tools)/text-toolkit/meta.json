@@ -1,23 +1,26 @@
 {
-    "name": "Text Toolkit",
-    "description":"",
-    "contributors": [{
-        "name": "Shree Jaybhay",
-        "githubId": "shreejaybhay"
-    }, {
-        "name": "",
-        "githubId": ""
+  "name": "Text Toolkit",
+  "description": "",
+  "contributors": [
+    {
+      "name": "Shree Jaybhay",
+      "githubId": "shreejaybhay"
     },
     {
-        "name": "",
-        "githubId": ""
+      "name": "Ravish Ranjan",
+      "githubId": "RavishRanjancodes"
     },
     {
-        "name": "",
-        "githubId": ""
+      "name": "Joel Mathew Job",
+      "githubId": "JoelMathewJob"
     },
     {
-        "name": "",
-        "githubId": ""
-    }]
+      "name": "Kaneez Fatima Bohra",
+      "githubId": "kaneezfatima19"
+    },
+    {
+      "name": "Sanjana Mutkiri",
+      "githubId": "sanjanamutkiri"
+    }
+  ]
 }

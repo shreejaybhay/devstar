@@ -1,9 +1,6 @@
 <script>
   let textContent = '';
-
-  const applyBold = () => {
-    textContent = `<b>${textContent}</b>`;
-  };
+  let sorted = false;
 
   const applyItalic = () => {
     textContent = `<i>${textContent}</i>`;
@@ -44,13 +41,45 @@
     textContent = words.join(' ');
   };
 
-  const copyText = () => {
-    navigator.clipboard.writeText(textContent).then(() => {
-      alert('Text copied to clipboard');
-    }).catch(err => {
-      console.error('Failed to copy text: ', err);
-    });
+  const reverseWords = () => {
+    let words = textContent.split(' ');
+    words = words.map(word => word.split('').reverse().join('')).join(' ');
+    textContent = words;
   };
+
+ const sortWords = () => {
+  let words = textContent.split(' ');
+  
+  if (!sorted) {
+    words.sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
+    sorted = true;
+  } else {
+    words.reverse();
+    sorted = false;
+  }
+  
+  textContent = words.join(' ');
+};
+
+  const splitText = () => {
+    textContent = textContent.split('').join(' ');
+  };
+
+  const removeWhitespace = () => {
+    textContent = textContent.replace(/\s+/g, '');
+  };
+  const copyText = () => {
+  const textarea = document.createElement('textarea');
+  textarea.value = textContent;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+
+  // Display an alert after copying
+  alert('Text copied to clipboard!');
+};
+
 </script>
 
 <style>
@@ -68,7 +97,6 @@
       placeholder="Type your text here..."></textarea>
     <div class="flex space-x-4 items-start justify-between">
       <div class="flex flex-wrap gap-3">
-        <button on:click={applyBold} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Bold</button>
         <button on:click={applyItalic} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Italic</button>
         <button on:click={applyUnderline} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Underline</button>
         <button on:click={applyStrikethrough} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Strikethrough</button>
@@ -78,6 +106,10 @@
         <button on:click={indentText} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Indent</button>
         <button on:click={justifyText} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Justify</button>
         <button on:click={removeWord} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Remove Word</button>
+        <button on:click={reverseWords} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Reverse Word</button>
+        <button on:click={sortWords} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Sort Word</button>
+        <button on:click={splitText} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Split Text</button>
+        <button on:click={removeWhitespace} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Remove Whitespace</button>
       </div>
       <div>
         <button on:click={copyText} class="copy-button bg-gray-600 text-white px-4 py-3 rounded hover:bg-gray-500 duration-300">
